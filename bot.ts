@@ -21,8 +21,8 @@ export class Bot implements AsyncIterable<Update> {
   readonly #telegram: Telegram;
   readonly #logger: Logger = new Logger("INFO: ");
 
-  constructor(token: string) {
-    this.#telegram = new Telegram(token);
+  constructor(token: string, apiurl?: string) {
+    this.#telegram = new Telegram(token, apiurl);
   }
 
   get telegram(): Telegram {
