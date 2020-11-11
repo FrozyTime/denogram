@@ -40,10 +40,10 @@ export class Bot extends Composer<Context<State>> {
 
   readonly #logger: Logger = new Logger("INFO: ");
 
-  constructor(token: string) {
+  constructor(token: string, apiUrl?: string) {
     super();
 
-    this.#telegram = new Telegram(token);
+    this.#telegram = new Telegram(token, apiUrl);
   }
 
   get telegram(): Telegram {
